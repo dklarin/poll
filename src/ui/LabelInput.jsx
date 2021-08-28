@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import pen from "./assets/pen.png";
-import pen_jpg from "./assets/pen_jpg.jpg";
 
 const Label = styled.label`
   border-radius: 5px;
   border: 1px lightgray solid;
   padding: 20px;
-  width: 200px;
-
+  width: auto;
   &:hover {
     border: 1px black solid;
   }
@@ -19,13 +16,13 @@ const Input = styled.input`
   border-radius: 5px;
   border: 1px lightgray solid;
   padding: 20px;
-  width: 200px;
+  width: auto;
   &:hover {
     border: 1px lightgray solid;
   }
 `;
 
-const RoundedDiv = styled.div`
+const Circle = styled.div`
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -45,13 +42,14 @@ export const FlexRow = styled.div`
   padding: 0rem;
 `;
 
-export const LabelInput = ({ primary, label }) => {
+export const LabelInput = (props) => {
   const [state, setState] = useState(false);
   const [labelo, setLabelo] = useState(true);
   const [anketa, setAnketa] = useState("Nova anketa");
 
   const handleChange = (e) => {
     setAnketa(e);
+    props.dijete(e)
   };
 
   return labelo ? (
@@ -67,7 +65,7 @@ export const LabelInput = ({ primary, label }) => {
         {anketa}
       </Label>
       {state ? (
-        <RoundedDiv
+        <Circle
           style={{ marginLeft: -25, marginTop: 8 }}
           onMouseEnter={(e) => {
             setState(true);
@@ -80,7 +78,7 @@ export const LabelInput = ({ primary, label }) => {
           }}
         >
           <Img height={20} src={pen} />
-        </RoundedDiv>
+        </Circle>
       ) : (
         <div />
       )}

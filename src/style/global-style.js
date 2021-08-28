@@ -31,16 +31,7 @@ export const ItemB = styled.div`
 export const ItemC = styled.div`
   grid-column: 3 / 4;
   grid-row: 3 / 4;
-  background-color: azure;
-  position: relative;
+  background-color: azure;  
 `;
 
-export const ItemD = styled.div`
-  grid-column: 3 / 4;
-  grid-row: 3 / 4;
-  display: grid;
-  width: auto;
-  height: 70px;
-  grid-template-columns: 40% auto 40%;
-  background-color: blue;
-`;
+
