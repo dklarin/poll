@@ -14,6 +14,11 @@ npx sb init
 
 run: yarn storybook
 
+hint: to normally use storybook with (yarn) start
+* yarn add --dev dotenv
+* create .env file in root directory
+* add line: SKIP_PREFLIGHT_CHECK=true
+
 ### react-router-dom
 
 yarn add react-router-dom
